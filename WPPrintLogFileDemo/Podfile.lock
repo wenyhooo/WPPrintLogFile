@@ -1,0 +1,16 @@
+PODS:
+  - WPSandBoxPreviewTool (0.0.2)
+
+DEPENDENCIES:
+  - WPSandBoxPreviewTool
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - WPSandBoxPreviewTool
+
+SPEC CHECKSUMS:
+  WPSandBoxPreviewTool: 727968b694b3e344cc8e7834a1fda878cf0cc368
+
+PODFILE CHECKSUM: dd4f6def410f527f645684376985dae5830e1322
+
+COCOAPODS: 1.5.0

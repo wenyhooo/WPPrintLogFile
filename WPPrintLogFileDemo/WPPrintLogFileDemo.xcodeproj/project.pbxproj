@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25335483190BDD123B2280C3 /* libPods-WPPrintLogFileDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B80ED83AD2D47463DF68DD /* libPods-WPPrintLogFileDemo.a */; };
 		FE515B9E1F7F4AFB00337D5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE515B9D1F7F4AFB00337D5C /* AppDelegate.m */; };
 		FE515BA11F7F4AFB00337D5C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE515BA01F7F4AFB00337D5C /* ViewController.m */; };
 		FE515BA41F7F4AFB00337D5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE515BA21F7F4AFB00337D5C /* Main.storyboard */; };
@@ -19,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27B80ED83AD2D47463DF68DD /* libPods-WPPrintLogFileDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WPPrintLogFileDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C360F646B36409A25F557CB /* Pods-WPPrintLogFileDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WPPrintLogFileDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WPPrintLogFileDemo/Pods-WPPrintLogFileDemo.release.xcconfig"; sourceTree = "<group>"; };
+		91AE0669116006271A1B961B /* Pods-WPPrintLogFileDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WPPrintLogFileDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WPPrintLogFileDemo/Pods-WPPrintLogFileDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FE515B991F7F4AFB00337D5C /* WPPrintLogFileDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WPPrintLogFileDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE515B9C1F7F4AFB00337D5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FE515B9D1F7F4AFB00337D5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -41,18 +45,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25335483190BDD123B2280C3 /* libPods-WPPrintLogFileDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11A6235DC7B0A34A9F76E6E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91AE0669116006271A1B961B /* Pods-WPPrintLogFileDemo.debug.xcconfig */,
+				7C360F646B36409A25F557CB /* Pods-WPPrintLogFileDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		81716A548A3DA3F648F16F32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27B80ED83AD2D47463DF68DD /* libPods-WPPrintLogFileDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FE515B901F7F4AFB00337D5C = {
 			isa = PBXGroup;
 			children = (
 				FE71ABA31F94B2BE000101F5 /* WPPrintLogFile.podspec */,
 				FE515B9B1F7F4AFB00337D5C /* WPPrintLogFileDemo */,
 				FE515B9A1F7F4AFB00337D5C /* Products */,
+				11A6235DC7B0A34A9F76E6E9 /* Pods */,
+				81716A548A3DA3F648F16F32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,9 +124,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE515BAF1F7F4AFB00337D5C /* Build configuration list for PBXNativeTarget "WPPrintLogFileDemo" */;
 			buildPhases = (
+				22F461E69D27C516FD5E8627 /* [CP] Check Pods Manifest.lock */,
 				FE515B951F7F4AFB00337D5C /* Sources */,
 				FE515B961F7F4AFB00337D5C /* Frameworks */,
 				FE515B971F7F4AFB00337D5C /* Resources */,
+				94A1A37A2E6B1DB4F63B091E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,6 +185,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22F461E69D27C516FD5E8627 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WPPrintLogFileDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94A1A37A2E6B1DB4F63B091E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WPPrintLogFileDemo/Pods-WPPrintLogFileDemo-resources.sh",
+				"${PODS_ROOT}/WPSandBoxPreviewTool/WPSandBoxPreviewTool/iconSource/back_icon@2x.png",
+				"${PODS_ROOT}/WPSandBoxPreviewTool/WPSandBoxPreviewTool/iconSource/GenericFolderIcon.png",
+				"${PODS_ROOT}/WPSandBoxPreviewTool/WPSandBoxPreviewTool/iconSource/lj_Pictures.png",
+				"${PODS_ROOT}/WPSandBoxPreviewTool/WPSandBoxPreviewTool/iconSource/lj_unknow_icon.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/back_icon@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GenericFolderIcon.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lj_Pictures.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lj_unknow_icon.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WPPrintLogFileDemo/Pods-WPPrintLogFileDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FE515B951F7F4AFB00337D5C /* Sources */ = {
@@ -301,6 +372,7 @@
 		};
 		FE515BB01F7F4AFB00337D5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91AE0669116006271A1B961B /* Pods-WPPrintLogFileDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -316,6 +388,7 @@
 		};
 		FE515BB11F7F4AFB00337D5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C360F646B36409A25F557CB /* Pods-WPPrintLogFileDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "WPWriteToFile.h"
 #import "WPPrintLogFile.h"
+#ifdef DEBUG
+#import <WPSandBoxPreviewTool/WPSandBoxPreviewTool.h>
+#endif
 
 @interface ViewController ()
 
@@ -18,11 +21,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSInteger count = 1;
-    NSInteger indexx = 1;
+
+}
+- (IBAction)printLogAction:(id)sender
+{
     for (NSInteger index = 0; index < 100 ; index ++) {
-        WPPrintFileLog(@"shabi",@"asdas,count = %d,index = %d",++count,--indexx);
+        WPPrintFileLog(@"自定义Log文件",@"哈哈哈哈emoji有点卡,count = %d,index = %d",index,index-100);
     }
+}
+- (IBAction)lookLogAction:(id)sender 
+{
+#ifdef DEBUG
+    [[WPSandBoxPreviewTool sharedTool] setOpenLog:YES];
+    [[WPSandBoxPreviewTool sharedTool] autoOpenCloseApplicationDiskDirectoryPanel];
+#endif
 }
 
 

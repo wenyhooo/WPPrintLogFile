@@ -1,0 +1,8 @@
+platform :ios, '8.0'
+
+inhibit_all_warnings!
+
+target 'WPPrintLogFileDemo' do
+
+    pod 'WPSandBoxPreviewTool',:configuration => 'Debug'  #放github上了
+end
