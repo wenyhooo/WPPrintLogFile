@@ -1,4 +1,4 @@
-# WPPrintLogFile  功能强大令人发指!!!!
+# WPPrintLogFile !!!!
 
 1. 支持打印的log 到沙盒文件
 2. 配合 pod WPSandBoxTool可以在应用内直接查看沙盒数据. 
