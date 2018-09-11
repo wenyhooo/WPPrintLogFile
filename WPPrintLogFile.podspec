@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "WPPrintLogFile"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "WPPrintLogFile"
   s.homepage     = "git@github.com:wenyhooo/WPPrintLogFile.git"
   s.license      = 'MIT'

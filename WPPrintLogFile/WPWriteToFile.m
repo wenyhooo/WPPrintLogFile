@@ -7,6 +7,7 @@
 //
 
 #import "WPWriteToFile.h"
+#import <UIKit/UIKit.h>
 
 @implementation WPWriteToFile
 
@@ -17,13 +18,24 @@
     if(!fileName ||!fileName.length ){
         fileName = [NSString stringWithFormat:@"%@",[self currentDate]];
     }
-    if(![[NSFileManager defaultManager] fileExistsAtPath:_logfolderPath]){
-        [[NSFileManager defaultManager] createDirectoryAtPath:_logfolderPath withIntermediateDirectories:YES attributes:nil error:nil];
+   NSFileManager *manager = [NSFileManager defaultManager];
+    if(![manager fileExistsAtPath:_logfolderPath]){
+        [manager createDirectoryAtPath:_logfolderPath withIntermediateDirectories:YES attributes:nil error:nil];
     }
+    
     fileName = [NSString stringWithFormat:@"%@.txt",fileName];
     NSString *_logfilePath = [_logfolderPath stringByAppendingPathComponent:fileName];
-    if(![[NSFileManager defaultManager] fileExistsAtPath:_logfilePath]){
-        [[NSFileManager defaultManager] createFileAtPath:_logfilePath contents:nil attributes:nil];
+    
+    if([manager fileExistsAtPath:_logfilePath]){
+        CGFloat fileSize =  [[manager attributesOfItemAtPath:_logfilePath error:nil] fileSize];
+        CGFloat folderSize1 = fileSize/1024.f/1024.f;
+        if (folderSize1 > 5) {
+            [manager removeItemAtPath:_logfolderPath error:nil];
+        }
+    }
+    
+    if(![manager fileExistsAtPath:_logfilePath]){
+        [manager createFileAtPath:_logfilePath contents:nil attributes:nil];
     }
     content = [NSString stringWithFormat:@"[%@] %@\r\n\r\n",[self currentDate],content];
     NSFileHandle * fileHandle = [NSFileHandle fileHandleForWritingAtPath:_logfilePath];
